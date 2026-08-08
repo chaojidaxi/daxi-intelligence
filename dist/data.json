@@ -1,0 +1,97 @@
+{
+  "lastUpdated": "2026-08-09T00:15:00",
+  "stats": { "totalNewToday": 22, "totalThisWeek": 22, "unreadCount": 22, "highRelevanceCount": 14 },
+  "dailyTop10": [
+    {"id":"d1","title":"十三行冬季订货会收官，12月将出海越南办展","summary":"为期四天的十三行2026冬季联合订货会7月26日收官，汇聚全国实体店主、直播电商和二批采购商。主办方宣布12月在越南举办首届'蓝潮·航启'跨境时尚展会。","source":"南方都市报","sourceType":"website","url":"https://www.163.com/dy/article/L2NDC9EP05129QAF.html","date":"2026-08-08","tags":["十三行","出海","订货会","越南"],"relevance":"high","subCategory":"shisanhang","trainingTakeaway":"十三行正式出海了——告诉老板：你的竞争对手不只是隔壁档口，是东南亚市场。培训时可以加入'出海趋势对一批的影响'话题，帮老板提前布局。","isRead":false},
+    {"id":"d2","title":"大脑营行《系统思维》课程：产品+营销+团队三系统搭建企业增长底层","summary":"大脑营行旗舰课程6月在苏州开课，核心主张：企业增长靠系统而非个人能力。课程落地三步法：产品分层迭代机制、营销转化全链路、团队绩效长效机制。","source":"大脑营行官网","sourceType":"competitor","url":"https://www.yoao.com/news/253","date":"2026-08-08","tags":["大脑营行","系统思维","产品分层","营销链路","团队绩效"],"relevance":"high","subCategory":"mgmt-training","trainingTakeaway":"大脑营行的'系统思维'可以拆解后用在我们培训里：产品分层（引流款/利润款/形象款）、营销链路（获客→培育→成交→复购→裂变），这些概念翻译成档口语言就是'怎么让客户来了还想来'。","isRead":false},
+    {"id":"d3","title":"AI帮21家服装店做内容营销，单店月均销售额提升60%","summary":"实操案例：用DeepSeek+通义万相+剪映批量生产短视频和图文内容。抖音每天1-2条、小红书每天1条、朋友圈每天1条，素材店员每天花10分钟拍。","source":"豆创会","sourceType":"website","url":"https://www.douchuanghui.com/thread-16744-1-1.html","date":"2026-08-08","tags":["AI","短视频","内容营销","获客","实操"],"relevance":"high","subCategory":"platform","trainingTakeaway":"特别实用——可以教档口小妹用AI工具批量做内容，每天10分钟拍素材+AI帮写文案+剪映合成。培训时直接演示一遍，让小妹现场做出一条视频。","isRead":false},
+    {"id":"d4","title":"意法全球时尚潮城开工奠基，落户杭州钱塘区江海之城","summary":"7月22日，意法全球时尚潮城项目正式落地杭州钱塘区，意法同步推进国际轻纺中心建设和米兰国际时尚峰会参会计划。","source":"意法商业集团","sourceType":"wechat","url":"https://yffsc.com/news","date":"2026-08-08","tags":["意法","全球潮城","钱塘区","产业升级"],"relevance":"high","subCategory":"yifa","trainingTakeaway":"意法在快速扩张和升级，这意味着杭州女装批发市场的竞争门槛在提高。培训时要提醒商户：市场在变，你的团队能力也要跟上来。","isRead":false},
+    {"id":"d5","title":"行动教育被列为大脑营行同级对标平台——中小企业培训两强格局","summary":"行业分析将大脑营行和行动教育并列为中小企业管理培训双龙头。行动教育聚焦IPO后的大中企业利润增长，大脑营行深耕中小微企业系统搭建。","source":"行业分析","sourceType":"website","url":"","date":"2026-08-07","tags":["大脑营行","行动教育","培训行业","两强格局"],"relevance":"high","subCategory":"mgmt-training","trainingTakeaway":"了解同行格局很重要：这两家是'大课+系统'模式，我们是'巡店+培训+跟进'模式。差异化优势在于'落地'——他们教完就走了，我们盯着执行。","isRead":false},
+    {"id":"d6","title":"服装门店获客数据：私域复购成本仅0.5元/人，转化率60-75%","summary":"跟踪30+服装门店数据：私域复购获客成本0.5-1元/人、转化率60-75%远高于抖音(18-25%)和小红书(8-12%)。私域是ROI最高的渠道。","source":"行业数据","sourceType":"report","url":"","date":"2026-08-07","tags":["私域","获客成本","转化率","数据"],"relevance":"high","subCategory":"customer","trainingTakeaway":"这个数据必须放进培训！用真金白银的数据说服老板和小妹：维护老客户比找新客户划算100倍。','isRead":false},
+    {"id":"d7","title":"小团队激励核心：不是涨提成，是即时反馈+公开荣誉+清晰晋升","summary":"别再只发提成了！真正管用的销售激励藏在三个机制里：高频即时奖励（每周）、小组PK+公开荣誉、清晰晋升通道+利润分红。","source":"今日头条","sourceType":"website","url":"","date":"2026-08-06","tags":["激励","小团队","即时反馈","PK","晋升"],"relevance":"high","subCategory":"incentive","trainingTakeaway":"和我们的'每周三奖'方向完全一致。培训时可以用这篇文章作为外部佐证：'不只是我认为这样，行业实践也证明如此。'","isRead":false},
+    {"id":"d8","title":"2026秋冬女装三大趋势：复古氛围感+简约通勤+松弛韩系","summary":"十三行订货会揭示秋冬趋势：大衣、羽绒服、针织保暖为主力品类，复古氛围感穿搭、简约通勤风、松弛韩系格调成为三大主流方向。","source":"行业媒体","sourceType":"website","url":"","date":"2026-08-05","tags":["秋冬趋势","复古","通勤","韩系","数据"],"relevance":"high","subCategory":"product-trends","trainingTakeaway":"培训时加入趋势分享环节：'今年秋冬这三个风格最好卖，你知道怎么跟客户介绍吗？'帮小妹学会用趋势话术。","isRead":false},
+    {"id":"d9","title":"大脑营行推出《商战思维+AI应用》课程：AI赋能中小企业降本增效","summary":"3月大脑营行将AI深度融入商战课程，聚焦获客、营销、客服等高频场景。强调'低成本、高效率、快落地'，让不懂技术的老板也能快速上手。","source":"大脑营行官网","sourceType":"competitor","url":"http://www.youao.com/news/237","date":"2026-08-05","tags":["大脑营行","AI","商战思维","降本增效"],"relevance":"medium","subCategory":"mgmt-training","trainingTakeaway":"同行已经开始讲AI了，我们也需要准备相关内容——比如AI帮小妹写朋友圈文案、做短视频。这是未来培训必须补上的一块。","isRead":false},
+    {"id":"d10","title":"服装行业私域运营方案：公域引流→私域蓄水→专业互动→升单复购","summary":"小鹅通发布服装行业私域全链路方案：主流平台活码+包裹卡引流、穿搭干货建立信任、客户画像推荐搭配、积分秒杀培育忠诚。","source":"小鹅通","sourceType":"website","url":"","date":"2026-08-04","tags":["私域","全链路","客户经营","复购"],"relevance":"medium","subCategory":"repurchase","trainingTakeaway":"这四个环节可以直接用在我们培训的'微信客户经营'板块：引流（朋友圈+短视频）→蓄水（加微信）→互动（穿搭建议）→升单（推荐搭配）。","isRead":false}
+  ],
+  "fashionIndustry": {"id":"fashion-industry","name":"服装行业情报","shortName":"行业情报","description":"广州十三行、杭州意法、全国一批市场、女装趋势、商品动态","subCategories":[
+    {"id":"shisanhang","name":"广州十三行","items":[
+      {"id":"fi1","title":"十三行2026冬季订货会收官，12月出海越南","summary":"为期四天的订货会7月26日收官。秋冬三大趋势：复古氛围感、简约通勤、松弛韩系。12月将在越南举办首届'蓝潮·航启'跨境时尚博览会。","source":"南方都市报","sourceType":"website","url":"https://www.163.com/dy/article/L2NDC9EP05129QAF.html","date":"2026-08-08","tags":["十三行","出海","越南","订货会"],"relevance":"high","subCategory":"shisanhang","trainingTakeaway":"十三行正式出海——老板需要了解这对竞争格局的影响。","isRead":false},
+      {"id":"fi2","title":"十三行3000+商户日均上新近10万款原创设计","summary":"春季全球上新活动3月启幕，每个档口日均上新几十款原创设计。国际面料（韩国、意大利、比利时）被广泛应用，品质感持续提升。","source":"中新网","sourceType":"website","url":"","date":"2026-08-05","tags":["十三行","原创设计","上新","国际面料"],"relevance":"medium","subCategory":"shisanhang","trainingTakeaway":"用数据告诉小妹：你档口的竞争力在于'快'和'新'，每天上新你每天都要拍图发客户。","isRead":false},
+      {"id":"fi3","title":"广州推动专业市场出海：'PROMARKET采购节+海外跨境展'双线模式","summary":"广州市商务局推进专业市场三年行动方案，从对内集散向内外互通转型，扶持服饰、美妆等优势产业品类出海。","source":"珠江频道","sourceType":"website","url":"","date":"2026-08-03","tags":["广州","出海","专业市场","政策"],"relevance":"medium","subCategory":"shisanhang","trainingTakeaway":"政策利好出海——有实力的商户可以关注跨境机会。","isRead":false}
+    ]},
+    {"id":"yifa","name":"杭州意法","items":[
+      {"id":"fi4","title":"意法全球时尚潮城奠基，落户钱塘区江海之城","summary":"7月22日项目正式开工奠基，标志着意法从单一服饰城向全球时尚产业平台升级。","source":"意法商业集团","sourceType":"wechat","url":"https://yffsc.com/news","date":"2026-08-08","tags":["意法","全球潮城","钱塘区"],"relevance":"high","subCategory":"yifa","trainingTakeaway":"意法在快速扩张，服务门槛提高——导购能力需要同步升级。","isRead":false},
+      {"id":"fi5","title":"杭州9意法2026秋冬联合订货会产销双方斩获超强增长","summary":"6月16-18日为期三天的订货会圆满举办，产销双方反馈超预期增长。","source":"意法商业集团","sourceType":"wechat","url":"https://yffsc.com/news","date":"2026-08-06","tags":["意法","订货会","增长"],"relevance":"medium","subCategory":"yifa","trainingTakeaway":"市场在增长，不是没生意做，是看谁在抢。","isRead":false},
+      {"id":"fi6","title":"意法国际轻纺中心结构全面结顶，同步盛大开盘","summary":"6月17日项目主体结构全面结顶，意法在面料、辅料端同步布局产业链上游。","source":"意法商业集团","sourceType":"wechat","url":"https://yffsc.com/news","date":"2026-08-04","tags":["意法","轻纺中心","产业链"],"relevance":"medium","subCategory":"yifa","trainingTakeaway":"意法在构建全产业链生态——从面料到成衣到批发。","isRead":false}
+    ]},
+    {"id":"product-trends","name":"商品趋势","items":[
+      {"id":"fi7","title":"2026秋冬女装三大主流：复古氛围感+简约通勤+松弛韩系","summary":"大衣、羽绒服、针织保暖为主力品类。复古氛围感穿搭、简约通勤风、松弛韩系格调成为今年秋冬三大方向。","source":"行业媒体","sourceType":"website","url":"","date":"2026-08-05","tags":["女装","秋冬","趋势"],"relevance":"high","subCategory":"product-trends","trainingTakeaway":"培训时教小妹用趋势话术：'今年最火的是复古风，姐你试试这套。'","isRead":false}
+    ]},
+    {"id":"national","name":"全国一批市场","items":[]}
+  ]},
+  "competitorRadar": {"id":"competitor-radar","name":"同行雷达","shortName":"同行","description":"企业管理培训、服装培训咨询同行动态","subCategories":[
+    {"id":"mgmt-training","name":"企业管理培训","items":[
+      {"id":"cr1","title":"大脑营行《系统思维》：产品+营销+团队三系统","summary":"6月苏州开课，数千名企业家参训。核心：产品分层迭代、营销转化全链路、团队绩效长效机制。强调'出现问题优化结构，而非追责个人'。","source":"大脑营行官网","sourceType":"competitor","url":"https://www.yoao.com/news/253","date":"2026-08-08","tags":["大脑营行","系统思维","产品","营销","团队"],"relevance":"high","subCategory":"mgmt-training","trainingTakeaway":"拆解：产品分层（引流款/利润款/形象款）=档口的爆款/利润款/引流款。可翻译成批发行话。","isRead":false},
+      {"id":"cr2","title":"大脑营行《商战思维+AI应用》：抢流量·提战力·借融招·变模式","summary":"3月苏州开课，4大核心策略+12个实战战术，整合AI工具用于获客、营销、客服场景。马来西亚站4月开课拓展东南亚市场。","source":"大脑营行官网","sourceType":"competitor","url":"http://www.youao.com/news/237","date":"2026-08-07","tags":["大脑营行","AI","商战","出海"],"relevance":"high","subCategory":"mgmt-training","trainingTakeaway":"同行已经把AI纳入课程体系了，我们也需要储备相关内容。","isRead":false},
+      {"id":"cr3","title":"大脑营行vs行动教育：中小企业培训双龙头格局分析","summary":"大脑营行深耕中小微企业系统搭建(10+版权课程)，行动教育聚焦上市/拟上市企业利润增长。两强格局下，差异化在于落地深度。","source":"行业分析","sourceType":"website","url":"","date":"2026-08-07","tags":["大脑营行","行动教育","行业格局"],"relevance":"medium","subCategory":"mgmt-training","trainingTakeaway":"我们的差异化优势是'巡店+培训+跟进'的落地闭环——他们讲完就走了，我们盯着做。","isRead":false}
+    ]},
+    {"id":"fashion-consult","name":"服装培训咨询","items":[]},
+    {"id":"competitor-analysis","name":"同行分析","items":[]}
+  ]},
+  "courseResearch": {"id":"course-research","name":"课程研究院","shortName":"课程","description":"经营、销售、管理、培训方法","subCategories":[
+    {"id":"business-mgmt","name":"企业经营","items":[]},
+    {"id":"sales-growth","name":"销售增长","items":[
+      {"id":"cs1","title":"AI帮21家服装店做内容营销实操全流程","summary":"五步：素材采集（每天10分钟）→知识库投喂→AI批量生产（4小时=1周工作量）→多平台分发（抖音+小红书+朋友圈）→数据复盘。","source":"豆创会","sourceType":"website","url":"","date":"2026-08-08","tags":["AI","内容营销","短视频","实操"],"relevance":"high","subCategory":"sales-growth","trainingTakeaway":"可直接做成培训课件：教小妹用AI工具做短视频的5个步骤，当场演示一条。","isRead":false},
+      {"id":"cs2","title":"服装门店获客渠道ROI对比：私域最优，抖音性价比最高","summary":"私域复购成本0.5-1元/人转化率60-75%。抖音本地生活获客6-12元/人转化率18-25%。小红书种草客单价最高520元。","source":"行业数据","sourceType":"report","url":"","date":"2026-08-07","tags":["获客","ROI","私域","抖音","小红书"],"relevance":"high","subCategory":"sales-growth","trainingTakeaway":"用数据说服老板把预算投在私域维护上，而不是盲目投广告。","isRead":false}
+    ]},
+    {"id":"team-mgmt","name":"团队管理","items":[
+      {"id":"cs3","title":"2026年销售激励新方法论：即时反馈+公开荣誉+清晰晋升","summary":"三大机制替代纯提成：周度冲刺奖(500-1000元即时发放)、小组PK+英雄榜、清晰晋升通道。核心：高频小额比低频大额更有效。","source":"行业观察","sourceType":"website","url":"","date":"2026-08-06","tags":["激励","小团队","即时反馈","PK","晋升"],"relevance":"high","subCategory":"team-mgmt","trainingTakeaway":"与我们的每周三奖方向一致。可以以此作为培训中的行业佐证。","isRead":false}
+    ]},
+    {"id":"fashion-prof","name":"服装专业","items":[]},
+    {"id":"training-tech","name":"培训技术","items":[]}
+  ]},
+  "managementLearning": {"id":"management-learning","name":"经营管理学习","shortName":"经营学习","description":"按主题整理的经营管理知识","subCategories":[
+    {"id":"sales","name":"销售增长","items":[]},
+    {"id":"customer","name":"客户经营","items":[]},
+    {"id":"incentive","name":"激励机制","items":[]},
+    {"id":"product","name":"商品管理","items":[]},
+    {"id":"key-account","name":"大客户经营","items":[]}
+  ]},
+  "caseStudies": {"id":"case-studies","name":"案例研究","shortName":"案例","description":"各类实战案例","subCategories":[
+    {"id":"sales-case","name":"销售增长案例","items":[
+      {"id":"ca1","title":"某女装品牌3个月ROI从1.8提升到3.5","summary":"策略：减少低效广告（砍掉ROI1.2的渠道）、加大内容自然流量（每周10条短视频）、私域分层运营。自然流量占比从20%→45%，复购率15%→35%。","source":"运营部","sourceType":"website","url":"","date":"2026-08-06","tags":["ROI","内容营销","私域","案例"],"relevance":"medium","subCategory":"sales-case","trainingTakeaway":"这个案例说明：砍掉不赚钱的动作，比加新动作更有效。培训时可类比：不要每条朋友圈都发，发精品。","isRead":false}
+    ]},
+    {"id":"cross-industry","name":"跨行业优秀案例","items":[]}
+  ]},
+  "topicTracking": {"id":"topic-tracking","name":"专题追踪","shortName":"专题","description":"重点关注话题","subCategories":[
+    {"id":"repurchase","name":"客户复购","items":[]},
+    {"id":"key-account","name":"大客户经营","items":[]},
+    {"id":"sales-proactive","name":"销售主动性","items":[]},
+    {"id":"sales-incentive","name":"销售激励","items":[]}
+  ]},
+  "trends": {"id":"trends","name":"趋势与新知识","shortName":"趋势","description":"AI、新零售、消费趋势、跨行业启发","subCategories":[
+    {"id":"ai","name":"AI与企业经营","items":[
+      {"id":"tr1","title":"AI赋能服装店内容营销：2026年已成实操标配","summary":"DeepSeek写文案、通义万相生成配图、Fish Audio配音、剪映批量合成——这套AI工作流已在21家服装店验证有效。","source":"豆创会","sourceType":"website","url":"","date":"2026-08-08","tags":["AI","内容营销","实操","工具"],"relevance":"high","subCategory":"ai","trainingTakeaway":"预留一个培训专题：教小妹用AI写朋友圈文案和短视频脚本。","isRead":false}
+    ]},
+    {"id":"consumption","name":"消费趋势","items":[]},
+    {"id":"cross-inspire","name":"跨行业启发","items":[]}
+  ]},
+  "sources": {"wechat":[
+    {"name":"大脑营行","url":"https://www.yoao.com","category":"企业管理培训"},
+    {"name":"行动教育","url":"https://www.xdjy.com","category":"企业管理培训"},
+    {"name":"意法商业集团","url":"https://yffsc.com","category":"批发市场"},
+    {"name":"陈列共和","url":"","category":"服装培训"},
+    {"name":"服装邦","url":"","category":"服装行业"},
+    {"name":"见实","url":"","category":"私域运营"}
+  ],"websites":[
+    {"name":"中国纺织工业联合会","url":"http://www.cntac.org.cn","category":"行业数据"},
+    {"name":"南方都市报","url":"https://www.163.com","category":"新闻媒体"},
+    {"name":"豆创会","url":"https://www.douchuanghui.com","category":"AI实战社区"}
+  ],"competitors":[
+    {"name":"大脑营行","url":"https://www.yoao.com","type":"企业管理培训"},
+    {"name":"行动教育","url":"https://www.xdjy.com","type":"企业管理培训"}
+  ],"videos":[
+    {"name":"服装穿搭教程","platform":"抖音","category":"内容营销"},
+    {"name":"服装创业分享","platform":"小红书","category":"行业经验"}
+  ]}
+}
