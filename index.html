@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>大喜 · 经营学习情报站</title>
+<style>
+:root{--bg:#f5f5f7;--card:#fff;--text:#1d1d1f;--sub:#86868b;--muted:#aeaeb2;--blue:#0071e3;--green:#30d158;--orange:#ff9f0a;--border:#e5e5ea;--navbg:#fbfbfd;--r:14px;--rr:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;display:flex;min-height:100vh}
+/* Sidebar */
+.sidebar{width:230px;background:var(--navbg);border-right:1px solid var(--border);position:sticky;top:0;height:100vh;display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto}
+.sidebar-logo{padding:24px 18px 14px;display:flex;align-items:center;gap:10px}
+.sidebar-logo .icon{width:30px;height:30px;background:var(--text);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;flex-shrink:0}
+.sidebar-logo h1{font-size:13px;font-weight:600;line-height:1.2}
+.sidebar-logo p{font-size:10px;color:var(--muted)}
+.sidebar-nav{flex:1;padding:4px 10px}
+.sidebar-nav .sec{font-size:9px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:2px;padding:12px 10px 6px}
+.sidebar-nav .nav-item,.sidebar-nav .nav-parent{display:flex;align-items:center;padding:7px 10px;border-radius:8px;font-size:13px;font-weight:500;color:#6e6e73;cursor:pointer;transition:all .15s;text-decoration:none;gap:6px;user-select:none}
+.sidebar-nav .nav-item:hover,.sidebar-nav .nav-parent:hover{background:#f0f0f5;color:var(--text)}
+.sidebar-nav .nav-item.active,.sidebar-nav .nav-parent.active{background:#e8e8ed;color:var(--text)}
+.sidebar-nav .arrow{font-size:8px;margin-left:auto;transition:transform .2s;color:var(--muted)}
+.sidebar-nav .arrow.open{transform:rotate(90deg)}
+.sidebar-nav .children{padding-left:12px;border-left:1px solid var(--border);margin-left:14px;display:none}
+.sidebar-nav .children.show{display:block}
+.sidebar-nav .child{display:block;padding:5px 10px;border-radius:6px;font-size:12px;color:var(--sub);cursor:pointer;transition:all .15s}
+.sidebar-nav .child:hover,.sidebar-nav .child.active{color:var(--blue)}
+.sidebar-footer{padding:12px 18px;border-top:1px solid var(--border);display:flex;align-items:center;gap:6px;font-size:10px;color:var(--muted)}
+.sidebar-footer .dot{width:6px;height:6px;background:var(--green);border-radius:50%}
+/* Main */
+main{flex:1;padding:36px 32px 60px;max-width:900px;overflow-x:hidden}
+main h2{font-size:26px;font-weight:700;letter-spacing:-.5px;margin-bottom:2px}
+main .desc{font-size:14px;color:var(--sub);margin-bottom:28px}
+/* Home cards */
+.home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:36px}
+.home-card{border-radius:var(--rr);padding:24px;cursor:pointer;transition:all .2s;text-decoration:none;color:var(--text)}
+.home-card.white{background:var(--card);border:1px solid var(--border)}
+.home-card.white:hover{border-color:#d1d1d6;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.home-card.dark{background:var(--text);border:1px solid var(--text)}
+.home-card.blue{background:var(--blue);border:1px solid var(--blue)}
+.home-card .card-icon{font-size:22px;margin-bottom:12px}
+.home-card .card-title{font-size:16px;font-weight:600;margin-bottom:4px}
+.home-card.dark .card-title,.home-card.blue .card-title{color:#fff}
+.home-card .card-desc{font-size:13px;color:var(--sub);line-height:1.4}
+.home-card.dark .card-desc{color:#a1a1a6}
+.home-card.blue .card-desc{color:rgba(255,255,255,.7)}
+/* Items list */
+.items-list{display:flex;flex-direction:column;gap:6px}
+.item{border-radius:var(--r);padding:14px 16px;transition:all .15s;cursor:default}
+.item.white{background:var(--card);border:1px solid var(--border)}
+.item.white:hover{border-color:#d1d1d6}
+.item .item-meta{display:flex;gap:8px;align-items:center;margin-bottom:4px;flex-wrap:wrap}
+.item .item-meta .badge{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:500}
+.item .item-meta .badge.high{background:rgba(0,113,227,.08);color:var(--blue)}
+.item .item-meta .badge.med{background:rgba(255,159,10,.08);color:var(--orange)}
+.item .item-meta span{font-size:11px;color:var(--muted)}
+.item .item-title{font-size:14px;font-weight:500;margin-bottom:3px;line-height:1.4}
+.item .item-summary{font-size:13px;color:var(--sub);line-height:1.5}
+.item .item-takeaway{margin-top:8px;display:flex;gap:6px;align-items:flex-start}
+.item .item-takeaway .tdot{color:var(--green);font-size:9px;flex-shrink:0;margin-top:3px;line-height:1}
+.item .item-takeaway p{font-size:12px;color:#6e6e73;line-height:1.5}
+/* Category section */
+.cat-section{margin-bottom:24px}
+.cat-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;cursor:pointer}
+.cat-title .cat-arrow{font-size:8px;transition:transform .2s}
+.cat-title .cat-arrow.open{transform:rotate(90deg)}
+.cat-body{display:none}
+.cat-body.open{display:block}
+.subcat-title{font-size:12px;font-weight:500;color:var(--sub);margin:8px 0 6px 12px}
+/* Section header */
+.sec-head{display:flex;justify-content:space-between;align-items:center;margin:28px 0 12px}
+.sec-head h3{font-size:17px;font-weight:600}
+.sec-head span{font-size:12px;color:var(--muted)}
+/* Filters */
+.filter-bar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.filter-bar button{padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;border:1px solid var(--border);background:var(--card);color:#6e6e73;cursor:pointer;transition:all .15s}
+.filter-bar button:hover{background:#f5f5f7}
+.filter-bar button.active{background:var(--text);color:#fff;border-color:var(--text)}
+/* Empty */
+.empty{text-align:center;padding:50px 0;color:var(--muted);font-size:14px;line-height:1.6}
+.total-count{font-size:12px;color:var(--muted);margin-left:6px;font-weight:400}
+/* Sources list */
+.sources-group{margin-bottom:24px}
+.sources-group h4{font-size:13px;font-weight:600;margin-bottom:10px}
+.src-list{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.src-row{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #f0f0f5;font-size:13px}
+.src-row:last-child{border-bottom:none}
+.src-row .sname{font-weight:500}
+.src-row .sdetail{color:var(--muted);margin-left:6px;font-size:12px}
+@media(max-width:768px){body{flex-direction:column}.sidebar{width:100%;height:auto;position:relative;padding:8px}.sidebar-logo,.sidebar-footer,.sidebar-nav .sec,.sidebar-nav .children{display:none}.sidebar-nav{display:flex;gap:2px;padding:0;overflow-x:auto}main{padding:20px 14px}.home-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<aside class="sidebar" id="sidebar"></aside>
+<main id="main"><div class="empty">加载中...</div></main>
+<script>
+// ============ NAVIGATION STRUCTURE ============
+const NAV = [
+  {id:'home',name:'今日学习',icon:'📡',home:true},
+  {id:'fashion',name:'服装行业情报',icon:'🏪',children:[
+    {id:'shisanhang',name:'广州十三行'},{id:'yifa',name:'杭州意法'},{id:'national',name:'全国一批市场'},
+    {id:'wholesale',name:'服装批发市场'},{id:'womenswear',name:'女装行业'},{id:'productTrends',name:'商品趋势'},
+    {id:'newArrivals',name:'上新与订货'},{id:'inventory',name:'库存与清货'},{id:'businessChange',name:'商户经营变化'},{id:'supplyChain',name:'服装供应链'}
+  ]},
+  {id:'competitors',name:'同行雷达',icon:'🎯',children:[
+    {id:'mgmtTraining',name:'企业管理培训'},{id:'fashionConsult',name:'服装培训咨询'},
+    {id:'salesTraining',name:'销售培训同行'},{id:'bossTraining',name:'老板培训同行'},
+    {id:'storeMgrTraining',name:'店长培训同行'},{id:'competitorAnalysis',name:'同行分析'}
+  ]},
+  {id:'courses',name:'课程研究院',icon:'📚',children:[
+    {id:'businessMgmt',name:'企业经营'},{id:'salesGrowth',name:'销售增长'},{id:'teamMgmt',name:'团队管理'},
+    {id:'fashionProf',name:'服装专业'},{id:'trainingTech',name:'培训技术'}
+  ]},
+  {id:'learning',name:'经营管理学习',icon:'📖',children:[
+    {id:'sales',name:'销售增长'},{id:'customer',name:'客户经营'},{id:'keyAccount',name:'大客户经营'},
+    {id:'team',name:'团队管理'},{id:'storeMgr',name:'店长管理'},{id:'goal',name:'目标管理'},
+    {id:'incentive',name:'激励机制'},{id:'performance',name:'绩效管理'},{id:'newcomer',name:'新人培养'},
+    {id:'product',name:'商品管理'},{id:'inventory',name:'库存管理'},{id:'boss',name:'老板管理'},
+    {id:'organization',name:'组织管理'},{id:'bizModel',name:'商业模式'},{id:'profit',name:'利润与现金流'},{id:'bizData',name:'经营数据'}
+  ]},
+  {id:'cases',name:'案例研究',icon:'📋',children:[
+    {id:'salesCase',name:'销售增长案例'},{id:'customerCase',name:'客户经营案例'},{id:'teamCase',name:'团队管理案例'},
+    {id:'incentiveCase',name:'激励案例'},{id:'storeMgrCase',name:'店长管理案例'},{id:'productCase',name:'商品案例'},
+    {id:'apparelCompany',name:'服装企业案例'},{id:'retailCase',name:'零售案例'},{id:'crossIndustry',name:'跨行业优秀案例'}
+  ]},
+  {id:'topics',name:'专题追踪',icon:'🔍',children:[
+    {id:'repurchase',name:'客户复购'},{id:'keyAccount',name:'大客户经营'},{id:'salesProactive',name:'销售主动性'},
+    {id:'salesIncentive',name:'销售激励'},{id:'storeMgrAbility',name:'店长能力'},{id:'newcomerTrain',name:'新人培养'},
+    {id:'teamExecution',name:'团队执行'},{id:'productMgmt',name:'商品管理'},{id:'inventoryTurnover',name:'库存周转'},
+    {id:'bossMgmt',name:'老板管理'},{id:'custom',name:'自定义专题'}
+  ]},
+  {id:'trends',name:'趋势与新知识',icon:'🌐',children:[
+    {id:'ai',name:'AI与企业经营'},{id:'newRetail',name:'新零售'},{id:'consumption',name:'消费趋势'},
+    {id:'newSales',name:'销售新方法'},{id:'newMgmt',name:'管理新方法'},{id:'talent',name:'人才趋势'},
+    {id:'bizTrend',name:'商业趋势'},{id:'crossInspire',name:'跨行业启发'}
+  ]},
+  {id:'sources',name:'信息源管理',icon:'⚙️'}
+];
+
+// ============ STATE ============
+let D = null, page='home', subFilter='', expandedCats={}, expandedNav={};
+
+// ============ INIT ============
+async function init(){
+  try{D=await fetch('data.json?t='+Date.now()).then(r=>r.json())}catch(e){}
+  if(!D){document.getElementById('main').innerHTML='<div class="empty">数据加载失败，请刷新页面</div>';return}
+  buildSidebar();
+  render();
+}
+document.addEventListener('DOMContentLoaded',init);
+
+// ============ SIDEBAR ============
+function buildSidebar(){
+  let h=`<div class="sidebar-logo"><div class="icon">📡</div><div><h1>经营情报站</h1><p>自动抓取 · 直接学习</p></div></div><nav class="sidebar-nav"><div class="sec">导航</div>`;
+  NAV.forEach(n=>{
+    const hasCh=n.children&&n.children.length>0;
+    const active=page===n.id?' active':'';
+    if(!hasCh){
+      h+=`<div class="nav-item${active}" onclick="go('${n.id}')">${n.icon} ${n.name}</div>`;
+    } else {
+      const open=expandedNav[n.id]?' open':'';
+      h+=`<div class="nav-parent${active}" onclick="toggleNav('${n.id}')">${n.icon} ${n.name}<span class="arrow${open}">▶</span></div>`;
+      h+=`<div class="children${open?' show':''}" id="nav-children-${n.id}">`;
+      n.children.forEach(c=>{
+        const ca=(page===n.id&&subFilter===c.id)?' active':'';
+        h+=`<div class="child${ca}" onclick="goSub('${n.id}','${c.id}')">${c.name}</div>`;
+      });
+      h+=`</div>`;
+    }
+  });
+  h+=`</nav><div class="sidebar-footer"><div class="dot"></div>情报自动更新中</div>`;
+  document.getElementById('sidebar').innerHTML=h;
+}
+
+function toggleNav(id){expandedNav[id]=!expandedNav[id];buildSidebar()}
+function go(id){page=id;subFilter='';render();buildSidebar()}
+function goSub(parent,child){page=parent;subFilter=child;if(!expandedNav[parent]){expandedNav[parent]=true}render();buildSidebar()}
+
+// ============ RENDER ============
+function render(){
+  if(!D){return}
+  const m=document.getElementById('main');
+  switch(page){
+    case 'home': m.innerHTML=renderHome(); break;
+    case 'fashion': m.innerHTML=renderModule('fashionIndustry','服装行业情报','广州十三行、杭州意法、全国一批市场、女装趋势、商品动态、上新订货、库存清货、商户经营变化、服装供应链',D.fashionIndustry); break;
+    case 'competitors': m.innerHTML=renderCompetitors(); break;
+    case 'courses': m.innerHTML=renderModuleNested('courseResearch','课程研究院','企业经营、销售增长、团队管理、服装专业、培训技术的方法拆解和课程设计参考',D.courseResearch); break;
+    case 'learning': m.innerHTML=renderModuleFlat('managementLearning','经营管理学习','按16个主题整理的销售、管理、激励、商品、老板经营知识',D.managementLearning); break;
+    case 'cases': m.innerHTML=renderModuleFlat('caseStudies','案例研究','销售增长、客户经营、团队管理、激励、商品、服装企业、零售和跨行业优秀案例',D.caseStudies); break;
+    case 'topics': m.innerHTML=renderModuleFlat('topicTracking','专题追踪','客户复购、大客户经营、销售主动性、激励、店长能力、新人培养、团队执行、商品管理、库存周转、老板管理及自定义专题',D.topicTracking); break;
+    case 'trends': m.innerHTML=renderModuleFlat('trends','趋势与新知识','AI与企业经营、新零售、消费趋势、销售新方法、管理新方法、人才趋势、商业趋势、跨行业启发',D.trends); break;
+    case 'sources': m.innerHTML=renderSources(); break;
+  }
+}
+
+// ============ HOME ============
+function renderHome(){
+  const stats=D.stats;
+  const cards=[
+    {icon:'📰',title:'今日必看',desc:`${D.daily.todayTop10.length}条精选行业情报已筛选`,dark:true,click:()=>scrollToTop10()},
+    {icon:'🎯',title:'同行今天在讲什么',desc:'大脑营行·行动教育·陈列共和最新动态',white:true,click:()=>go('competitors')},
+    {icon:'🏪',title:'服装行业发生什么',desc:'十三行·意法·一批市场最新变化',white:true,click:()=>go('fashion')},
+    {icon:'📚',title:'今天拆一门课',desc:'同行课程拆解·培训方法积累',white:true,click:()=>go('courses')},
+    {icon:'📖',title:'今天学一个经营方法',desc:'销售·管理·激励·商品知识',white:true,click:()=>go('learning')},
+    {icon:'🔍',title:'我正在追踪的专题',desc:'复购·主动性·激励·店长能力',blue:true,click:()=>go('topics')},
+  ];
+  let h=`<h2>今日学习</h2><div class="desc">更新于 ${fmt(D.lastUpdated)} · ${D.daily.todayTop10.length}条今日情报</div>`;
+  h+=`<div class="home-grid">${cards.map((c,i)=>`<div class="home-card${c.dark?' dark':''}${c.blue?' blue':''}${c.white?' white':''}" onclick="${c.click?`(${c.click.toString()})()`:''}"><div class="card-icon">${c.icon}</div><div class="card-title">${c.title}</div><div class="card-desc">${c.desc}</div></div>`).join('')}</div>`;
+  h+=renderTop10();
+  return h;
+}
+
+function renderTop10(){
+  const items=D.daily.todayTop10;
+  let h=`<div class="sec-head" id="top10"><h3>今日必看 Top 10</h3><span>${items.length}条精选</span></div><div class="items-list">`;
+  h+=items.slice(0,10).map((it,i)=>renderItem(it,i+1)).join('');
+  h+=`</div>`;
+  return h;
+}
+
+function scrollToTop10(){document.getElementById('top10')?.scrollIntoView({behavior:'smooth'})}
+
+function renderItem(it,rank){
+  return `<div class="item white">
+    ${rank?`<div class="item-meta"><span style="font-weight:600;font-size:13px;width:20px">${String(rank).padStart(2,'0')}</span><span class="badge ${it.relevance==='high'?'high':'med'}">${it.relevance==='high'?'高相关':'一般'}</span><span>${it.source}</span><span>${it.date}</span></div>`:''}
+    ${!rank?`<div class="item-meta"><span class="badge ${it.relevance==='high'?'high':'med'}">${it.relevance==='high'?'高相关':'一般'}</span><span>${it.source}</span><span>${it.date}</span></div>`:''}
+    <div class="item-title">${it.title}</div>
+    <div class="item-summary">${it.summary}</div>
+    ${it.takeaway?`<div class="item-takeaway"><span class="tdot">●</span><p>${it.takeaway}</p></div>`:''}
+  </div>`;
+}
+
+// ============ FLAT MODULE (fashion, learning, cases, topics, trends) ============
+function renderModuleFlat(key,title,desc,cats){
+  // Filter
+  if(subFilter){
+    cats=cats.filter(c=>c.id===subFilter);
+  }
+  let h=`<h2>${title}</h2><div class="desc">${desc}</div>`;
+  // Sub filter bar
+  if(D[key]&&D[key].length>1){
+    h+=`<div class="filter-bar"><button class="${!subFilter?'active':''}" onclick="subFilter='';render();buildSidebar()">全部</button>`;
+    D[key].forEach(c=>{
+      const cnt=(c.items||[]).length;
+      h+=`<button class="${subFilter===c.id?'active':''}" onclick="goSub('${page}','${c.id}')">${c.name}${cnt>0?`<span class="total-count">${cnt}</span>`:''}</button>`;
+    });
+    h+=`</div>`;
+  }
+  // Content
+  let total=0;
+  cats.forEach(c=>{
+    const items=c.items||[];
+    total+=items.length;
+    if(items.length===0&&cats.length===1) return;
+    h+=`<div class="cat-section"><div class="cat-title">${c.name}${items.length>0?`<span class="total-count">${items.length}条</span>`:''}</div>`;
+    if(items.length>0){
+      h+=`<div class="items-list">${items.map(it=>renderItem(it)).join('')}</div>`;
+    }
+    h+=`</div>`;
+  });
+  if(total===0) h+=`<div class="empty">该分类暂无情报<br><span style="font-size:12px">自动化搜集任务运行后将自动填充</span></div>`;
+  return h;
+}
+
+// ============ NESTED MODULE (competitors, courses) ============
+function renderModuleNested(key,title,desc,cats){
+  let h=`<h2>${title}</h2><div class="desc">${desc}</div>`;
+  if(!cats||!cats.length){h+=`<div class="empty">暂无数据</div>`;return h}
+  let total=0;
+  cats.forEach(cat=>{
+    // Check for children (3rd level)
+    const hasChildren=cat.children&&cat.children.length>0;
+    const items=cat.items||[];
+    // Count all items
+    let catTotal=items.length;
+    if(hasChildren) cat.children.forEach(ch=>{catTotal+=(ch.items||[]).length});
+    if(subFilter&&cat.id!==subFilter&&!hasChildren) return;
+    if(subFilter&&hasChildren){
+      const matching=cat.children.some(ch=>ch.id===subFilter);
+      if(!matching) return;
+    }
+    total+=catTotal;
+    expandedCats[cat.id]=expandedCats[cat.id]??(subFilter?true:false);
+    
+    h+=`<div class="cat-section"><div class="cat-title" onclick="expandedCats['${cat.id}']=!expandedCats['${cat.id}'];render();buildSidebar()"><span class="cat-arrow${expandedCats[cat.id]?' open':''}">▶</span>${cat.name}${catTotal>0?`<span class="total-count">${catTotal}条</span>`:''}</div>`;
+    if(expandedCats[cat.id]){
+      h+=`<div class="cat-body open">`;
+      // Direct items
+      if(items.length>0){
+        h+=`<div class="items-list">${items.map(it=>renderItem(it)).join('')}</div>`;
+      }
+      // Children
+      if(hasChildren){
+        cat.children.forEach(ch=>{
+          const chItems=ch.items||[];
+          if(subFilter&&ch.id!==subFilter) return;
+          h+=`<div class="subcat-title">${ch.name}${chItems.length>0?`<span class="total-count">${chItems.length}条</span>`:''}</div>`;
+          if(chItems.length>0){
+            h+=`<div class="items-list" style="margin-left:8px">${chItems.map(it=>renderItem(it)).join('')}</div>`;
+          }
+        });
+      }
+      h+=`</div>`;
+    }
+    h+=`</div>`;
+  });
+  if(total===0) h+=`<div class="empty">该分类暂无情报<br><span style="font-size:12px">自动化搜集任务运行后将自动填充</span></div>`;
+  return h;
+}
+
+// ============ COMPETITORS (special nested structure) ============
+function renderCompetitors(){
+  const cats=D.competitorRadar;
+  let h=`<h2>同行雷达</h2><div class="desc">大脑营行、行动教育、陈列共和等培训同行动态与内容分析</div>`;
+  if(!cats||!cats.length){h+=`<div class="empty">暂无数据</div>`;return h}
+  let total=0;
+  cats.forEach(cat=>{
+    const hasChildren=cat.children&&cat.children.length>0;
+    const items=cat.items||[];
+    let catTotal=items.length;
+    if(hasChildren) cat.children.forEach(ch=>{catTotal+=(ch.items||[]).length});
+    total+=catTotal;
+    expandedCats[cat.id]=expandedCats[cat.id]??false;
+    
+    h+=`<div class="cat-section"><div class="cat-title" onclick="expandedCats['${cat.id}']=!expandedCats['${cat.id}'];render();buildSidebar()"><span class="cat-arrow${expandedCats[cat.id]?' open':''}">▶</span>${cat.name}${catTotal>0?`<span class="total-count">${catTotal}条</span>`:''}</div>`;
+    if(expandedCats[cat.id]){
+      h+=`<div class="cat-body open">`;
+      if(items.length>0){
+        h+=`<div class="items-list">${items.map(it=>renderItem(it)).join('')}</div>`;
+      }
+      if(hasChildren){
+        cat.children.forEach(ch=>{
+          const chItems=ch.items||[];
+          h+=`<div class="subcat-title">${ch.name}${chItems.length>0?`<span class="total-count">${chItems.length}条</span>`:''}</div>`;
+          if(chItems.length>0){
+            h+=`<div class="items-list" style="margin-left:8px">${chItems.map(it=>renderItem(it)).join('')}</div>`;
+          }
+        });
+      }
+      h+=`</div>`;
+    }
+    h+=`</div>`;
+  });
+  if(total===0) h+=`<div class="empty">暂无同行情报<br><span style="font-size:12px">自动化搜集任务运行后将自动填充</span></div>`;
+  return h;
+}
+
+// ============ SOURCES ============
+function renderSources(){
+  const s=D.sources;
+  let h=`<h2>信息源管理</h2><div class="desc">管理自动化情报搜集的来源渠道</div>`;
+  const groups=[
+    {t:'微信公众号',items:s.wechat.map(x=>({n:x.name,d:x.category})),field:'wechat'},
+    {t:'视频平台',items:[...(s.videoPlatforms||[]).map(x=>({n:x.name,d:x.platform}))],field:'videoPlatforms'},
+    {t:'行业网站',items:s.websites.map(x=>({n:x.name,d:x.category,u:x.url})),field:'websites'},
+    {t:'同行培训机构',items:s.competitors.map(x=>({n:x.name,d:x.type,u:x.url})),field:'competitors'},
+  ];
+  groups.forEach(g=>{
+    if(!g.items||!g.items.length) return;
+    h+=`<div class="sources-group"><h4>${g.t}</h4><div class="src-list">`;
+    g.items.forEach(x=>{
+      h+=`<div class="src-row"><div><span class="sname">${x.n}</span><span class="sdetail">${x.d||''}</span></div>${x.u?`<a href="${x.u}" target="_blank" style="font-size:12px;color:var(--blue);text-decoration:none">${(x.u||'').replace(/https?:\/\//,'').slice(0,25)}</a>`:'<span style="font-size:11px;color:#d1d1d6">待添加链接</span>'}</div>`;
+    });
+    h+=`</div></div>`;
+  });
+  h+=`<div style="margin-top:28px;padding:20px;background:rgba(0,113,227,.03);border:1px solid rgba(0,113,227,.1);border-radius:var(--rr)"><h4 style="font-size:15px;font-weight:600;margin-bottom:6px">添加新信息源</h4><p style="font-size:13px;color:var(--sub);line-height:1.6">你可以随时告诉我关注某个公众号或网站，我会更新自动化抓取任务。支持：微信公众号、视频号、抖音、小红书、B站、知乎、行业网站、企业官网、培训机构官网、研究机构、咨询公司、行业协会、政府数据、海外优质来源。</p></div>`;
+  return h;
+}
+
+function fmt(s){return new Date(s).toLocaleString('zh-CN',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})}
+</script>
+</body>
+</html>
